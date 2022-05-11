@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mysql-image-games
+    container_name: mysql-container-games
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+          - MYSQL_ROOT_PASSWORD=games
+          - MYSQL_DATABASE=games
+          - MYSQL_USER=root
+          - MYSQL_PASSWORD=@root
+
+    volumes:
+        - '.:/application'

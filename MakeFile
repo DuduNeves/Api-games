@@ -1,0 +1,8 @@
+
+build-mocks:
+	@echo "Building mocks..."
+
+	@~/go/bin/mockgen \
+	-source=controllers/games_controller_test.go \
+	-destination=controllers/mock/mockgames_controller_test.go \
+	-package=mock

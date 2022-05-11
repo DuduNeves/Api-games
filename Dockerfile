@@ -1,0 +1,3 @@
+FROM mysql
+
+ENV MYSQ_ROOT_PASSWORD games
